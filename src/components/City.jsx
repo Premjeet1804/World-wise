@@ -1,9 +1,10 @@
-import { useParams, useSearchParams } from "react-router-dom";
-import styles from "./City.module.css";
-import { useCities } from "../contexts/CitiesContext";
 import { useEffect } from "react";
-import Spinner from "./Spinner";
+import { useParams } from "react-router-dom";
+import { useCities } from "../contexts/CitiesContext";
 import BackButton from "./BackButton";
+import styles from "./City.module.css";
+import Spinner from "./Spinner";
+
 const formatDate = (date) =>
   new Intl.DateTimeFormat("en", {
     day: "numeric",
@@ -26,6 +27,7 @@ function City() {
   const { cityName, emoji, date, notes } = currentCity;
 
   if (isLoading) return <Spinner />;
+
   return (
     <div className={styles.city}>
       <div className={styles.row}>

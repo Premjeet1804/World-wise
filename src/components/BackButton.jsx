@@ -3,11 +3,12 @@ import Button from "./Button";
 
 function BackButton() {
   const navigate = useNavigate();
+
   return (
     <Button
       type="back"
       onClick={(e) => {
-        e.preventDefault(-1);
+        e.preventDefault();
         navigate(-1);
       }}
     >
